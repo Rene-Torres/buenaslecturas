@@ -1,14 +1,14 @@
 const config = {
-  production:{
-      SECRET: process.env.SECRET,
-      DATABASE: process.env.MONGODB_URI
+  production: {
+    SECRET: process.env.SECRET,
+    DATABASE: process.env.DATABASE,
   },
-  default:{
-      SECRET: 'BLISSISNOTHERE',
-      DATABASE: 'mongodb://localhost:27017/project'
-  }
-}
+  default: {
+    SECRET: 'SECRETVALUE',
+    DATABASE: process.env.DATABASE,
+  },
+};
 
-exports.get = function get(env){
-  return config[env] || config.default
-} 
+exports.get = function get(env) {
+  return config[env] || config.default;
+};
